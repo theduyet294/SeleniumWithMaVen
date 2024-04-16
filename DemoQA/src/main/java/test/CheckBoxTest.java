@@ -25,7 +25,7 @@ public class CheckBoxTest extends TestCase {
 		assertTrue(actualClass.contains("rct-icon-uncheck"));
 		checkBoxPage.clickIconCheckBox();
 		//Text is shown: "You have selected : home desktop notes commands documents workspace react angular veu office public private classified general downloads wordFile excelFile"
-		String actualHomeText = checkBoxPage.getctualHomeText();
+		String actualHomeText = checkBoxPage.getactualHomeText();
 		String expectedHomeText= "You have selected : home desktop notes commands documents workspace react angular veu office public private classified general downloads wordFile excelFile";
 		assertEquals(actualHomeText, expectedHomeText);
 		assertTrue(actualClass.contains("rct-icon-check"));

@@ -15,6 +15,18 @@ public class Page {
 	public Configuration config = new Configuration(System.getProperty("user.dir") + "\\src\\main\\resources\\"+"Configurations.properties");
 	public  int timeout_short = Integer.parseInt(config.getConfigValueByKey("timeout_short"));
 	
+	public HomePage homePage = new HomePage(driverWeb);
+	
+	public AlertsFrameWindowsPage alertsFrameWindowsPage = new AlertsFrameWindowsPage(driverWeb);
+	
+	public AlertsPage alertsPPage = new AlertsPage(driverWeb);
+	
+	public void goToAlertPages() {
+		testBase.scrollToEndPage();
+		homePage.clickAlertsFrameWindows();
+		alertsFrameWindowsPage.clickAlerts();
+		testBase.scrollToEndPage();
+	}
 	// khởi tạo hàm contrutor
 	public Page(WebDriver dr) {
 		testBase.driver = dr;

@@ -25,10 +25,14 @@ public class HomePage extends Page{
 		testBase.clickToElement(lblForm, timeout_short);
 		return new FormPage(driverWeb);
 	}
+//	public Page clickAlertsFrameWindows() {
+//		testBase.clickToElement(lblAlertsFrameWindows, timeout_short);
+//		return new Page(driverWeb);
+//	}
+
 	public AlertsFrameWindowsPage clickAlertsFrameWindows() {
 		testBase.clickToElement(lblAlertsFrameWindows, timeout_short);
 		return new AlertsFrameWindowsPage(driverWeb);
 	}
-	
 
 }

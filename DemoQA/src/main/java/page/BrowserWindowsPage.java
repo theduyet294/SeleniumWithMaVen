@@ -29,6 +29,7 @@ public class BrowserWindowsPage extends Page {
 	}
 
 	public DemoSampleWindowAlertPage clickNewWindowMessage() {
+		System.out.println("Start Click"); 
 		testBase.switchNewWindowByClick(btnNewWindowMessage, timeout_short);
 		return new DemoSampleWindowAlertPage(driverWeb);
 		

@@ -21,7 +21,7 @@ public class CheckBoxPage extends Page {
 		driverWeb.findElement(By.xpath("//button[@class='rct-collapse rct-collapse-b tn']")).click();
 	}
 	
-	public String getctualHomeText() {
+	public String getactualHomeText() {
 		String result="";
 		for(int i = 1;i<= 17;i++) {
 			result =result+"" + driverWeb.findElement(By.xpath("//*[@id='result']/span["+ i +"]")).getText(); 

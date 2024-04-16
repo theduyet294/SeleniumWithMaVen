@@ -81,11 +81,22 @@ public class TestBase {
 	
 	public void switchNewWindowByClick(By locator, int timeBySecond) {
 		String originalWindow = driver.getWindowHandle();
+		System.out.println("originalWindow" + originalWindow);
 		clickToElement(locator, timeBySecond);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(timeBySecond));
+		
+		//Loop through untill we find a new window handle
 		for (String windowHandle : driver.getWindowHandles()) {
-			if (!originalWindow.contentEquals(windowHandle)) {
-				driver.switchTo().window(windowHandle);
+			System.out.println("hello" +windowHandle);
+			//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(timeBySecond));
+			
+			if (!windowHandle.equalsIgnoreCase(originalWindow)) {
+				
+				System.out.println("driver1" + driver);
+				
+				driver.switchTo().window(driver.getWindowHandles().iterator().next());	
+				System.out.println("driver2" + driver);
+				String s1  = driver.findElement(By.xpath("//body")).getText();
+				System.out.println("originalWindow" + s1);
 				break;
 			}
 		}
@@ -96,7 +107,7 @@ public class TestBase {
 		String result="";
 		result = driver.findElement(locator).getAttribute(attributeName);
 		return result;
-	}
+	} 
 	/**
 	 * wait for element displayed 
 	 * @param timeBySecond
